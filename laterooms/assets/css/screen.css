@@ -285,9 +285,6 @@ article p{
 
 article img{
 	max-width:100%;
-	margin-top:30px;
-	border-radius:5px;
-	box-shadow: 0 1px 10px rgba(0,0,0,.25)
 }
 
 article p strong{
