@@ -1,31 +1,37 @@
 {{!< default}}
 
-<header id="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
-	<div class="purple-bar">
-		{{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
-		<a href="/" id="blog-title">{{@blog.title}}</a>
-		{{> links}}
-	</div>
-	<div class="cf"></div>
+<header id="site-head" class="index-header" style="background-image: url({{#if posts.0.image}}{{posts.0.image}}{{else}}{{@blog.cover}}{{/if}})">
+		<div class="purple-bar">
+			{{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>{{/if}}
+			<a href="/" id="blog-title">{{@blog.title}}</a>
+			{{> links}}
+		</div>
+		<div class="cf"></div>
 
-	<div id="title">
-		{{{@blog.description}}}
-	</div>
-
+	<a href="{{posts.0.url}}" class="main-post-header-link">
+		<h1 class="main-post-header">{{posts.0.title}}</h1>
+	</a>
 </header>
 
-<div class="container" id="content" role="main">
-
+<div class="container all-posts" id="content" role="main">
+	<ul class="all-posts-lists">
     {{#foreach posts}}
-
-    <article class="{{post_class}}" id="post-{{id}}">
-
-		<h1><a href="{{url}}">{{title}}</a></h1>
-		<span class="meta">{{date format='YYYY-MM-DD'}} {{#if tags}} {{#tags}} #{{name}} {{/tags}} {{/if}}</span>
-		<p class="summary">{{excerpt}}</p>
-    </article>
-
+	    {{#if @index}}
+	    <li class="post-item" id="post-{{id}}"{{#if image}} style="background-image: url({{image}});"{{/if}}>
+		    <article class="{{post_class}}">
+		    	<a href="{{url}}" class="post-link">
+					<h1>{{title}}</h1>
+			    	
+					{{#if image}}
+					{{else}}
+					<p class="summary">{{excerpt}}</p>
+					{{/if}}
+				</a>
+		    </article>
+	    </li>
+	    {{/if}}
     {{/foreach}}
+    </ul>
 
     {{pagination}}
 

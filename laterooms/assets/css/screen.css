@@ -102,9 +102,10 @@ header{
 	color:#fff;
 	text-transform:uppercase;
 	text-decoration:none;
-	font-size:32px;
+	font-size:24px;
 	font-weight:700;
-	margin-left:30px;
+	margin-left:5px;
+	padding-top: 4px;
 	float:left;
 	text-shadow:0 1px 5px rgba(0,0,0,.2);
 	font-family: 'Lato', sans-serif !important;
@@ -166,6 +167,32 @@ header h2{
 	font-family: 'Merriweather', serif !important;
 }
 
+.index-header{
+	position: relative;
+	margin-bottom: 0;
+}
+
+.main-post-header{
+	position: absolute;
+	bottom: -10px;
+	background-color: rgba(25, 8, 52, 0.8);
+	text-align: right;
+	font-size: 3em;
+	padding: 10px;
+	width:100%;
+}
+
+.main-post-header-link{
+	width: 100%;
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	font-family: 'Lato', sans-serif !important;
+	position: absolute;
+	top: 70px;
+	bottom: 0;
+}
+
 #post-header #title{
 	top:25%;
 	width: 100%;
@@ -176,6 +203,41 @@ header h2{
 	max-width:800px;
 	width: 100%;
 	margin:0 auto;
+}
+
+.all-posts.container{
+	max-width: 1200px;
+}
+
+.all-posts-lists{
+	list-style: none;
+}
+
+.post-item{
+	display: inline-block;
+	width:575px;
+	height: 440px;
+	border: solid 1px #ddd;
+	vertical-align: top;
+	margin: 0 7px 14px 0;
+	background-size: cover;
+	background-position: center;
+}
+
+.post-link{
+	height: 440px;
+	display: block;
+	text-decoration: none;
+}
+
+.post-item p{
+	padding: 10px 5px 5px 5px;
+}
+
+.post-item article h1{
+	padding: 8px 8px 12px 8px;
+	background-color: rgba(25, 8, 52, 0.8);
+	color: #fff;
 }
 
 #content{
@@ -444,7 +506,7 @@ footer{
     transition: opacity .5s;		
 }
 
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 590px) {
 		nav, footer {
 			display: none;
 		}
@@ -453,10 +515,10 @@ footer{
 			font-size: 20px;
 		}
 
-		header #blog-title {
-			width: auto;
-			float: none;
-			display: block;
-			text-align: center;
-		}
+}
+
+@media only screen and (max-width: 1220px) {
+	.post-item{
+		width: 100%;
+	}
 }
